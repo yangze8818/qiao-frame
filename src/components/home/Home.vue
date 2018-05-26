@@ -19,8 +19,8 @@
   import Welcome from 'components/welcome/welcome'
   import KalixHeader from 'components/navigate/KalixHeader'
   import KalixNavigate from 'components/navigate/KalixNavigate'
-  import UserEditpwd from 'views/admin/user/userEditpwd.vue'
-  import UserEdit from 'views/admin/user/userEdit.vue'
+  import UserEditpwd from 'views/admin/auth/user/userEditpwd.vue'
+  import UserEdit from 'views/admin/auth/user/userEdit.vue'
 
   export default {
     name: 'KalixHome',

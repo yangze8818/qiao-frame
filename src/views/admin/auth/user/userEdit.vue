@@ -50,14 +50,10 @@
 
 <script type="text/ecmascript-6">
   import FormModel from './model'
-  import {usersURL} from '../config.toml'
-  import Dialog from '@/components/custom/baseDialog.vue'
-  import BaseUpload from '@/components/custom/baseUpload'
-  import BaseDictSelect from '@/components/custom/baseDictSelect'
-  import BasePhoneFormItem from '@/components/custom/basePhoneFormItem'
-  import BaseMobileFormItem from '@/components/custom/baseMobileFormItem'
+  import {usersURL} from '../../config.toml'
 
   export default {
+    name: 'AdminUserEdit',
     data() {
       return {
         formModel: Object.assign({}, FormModel),
@@ -75,13 +71,6 @@
         targetURL: usersURL,
         labelWidth: '140px'
       }
-    },
-    components: {
-      KalixDialog: Dialog,
-      KalixUpload: BaseUpload,
-      KalixDictSelect: BaseDictSelect,
-      KalixPhoneFormItem: BasePhoneFormItem,
-      KalixMobileFormItem: BaseMobileFormItem
     },
     methods: {
       open(obj) {

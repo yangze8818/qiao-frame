@@ -12,14 +12,14 @@
 
 <script type="text/ecmascript-6">
   import FormModel from './model'
-  import Dialog from '../../../components/custom/baseDialog.vue'
-  import {userURL} from 'config/global.toml'
-  import Cache from 'common/cache'
-  export default {
+  import {userURL} from 'kalix-vue-lib/src/config/global.toml'
+  import Cache from 'kalix-vue-lib/src/common/cache'
 
+  export default {
+    name: 'AdminUserEditpwd',
     props: {},
     data() {
-      var validateOldPassword = (rule, value, callback) => {
+      let validateOldPassword = (rule, value, callback) => {
         if (value === '') {
           callback(new Error('请输入原密码'))
         } else {
@@ -38,7 +38,7 @@
           })
         }
       }
-      var validatePassword = (rule, value, callback) => {
+      let validatePassword = (rule, value, callback) => {
         if (value === '') {
           callback(new Error('请输入密码'))
         } else {
@@ -48,7 +48,7 @@
           callback()
         }
       }
-      var validateConfirmPassword = (rule, value, callback) => {
+      let validateConfirmPassword = (rule, value, callback) => {
         if (value === '') {
           callback(new Error('请再次输入密码'))
         } else if (value !== this.formModel.password) {
@@ -68,9 +68,7 @@
       }
     },
     created() {
-    },
-    components: {
-      KalixDialog: Dialog
+    // console.log('this.formRules.name:', this.formRules.name)
     },
     methods: {
       open() {

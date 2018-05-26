@@ -1,4 +1,14 @@
 import Vue from 'vue'
+// admin
+import Dataauth from '../admin/auth/dataauth'
+import Role from '../admin/auth/role'
+import User from '../admin/auth/user'
+import Workgroup from '../admin/auth/workgroup'
+import Duty from '../admin/organize/duty'
+import Org from '../admin/organize/org'
+import Orgchart from '../admin/organize/orgchart'
+import Orguser from '../admin/organize/orguser'
+import Admindict from '../admin/system/admindict'
 // cms
 import Column from '../cms/column/index'
 import Content from '../cms/content/index'
@@ -17,6 +27,15 @@ import Dict from '../sys/dict/index'
 import District from '../sys/district/index'
 import Setting from '../sys/setting/index'
 
+Dataauth.install(Vue)
+Role.install(Vue)
+User.install(Vue)
+Workgroup.install(Vue)
+Duty.install(Vue)
+Org.install(Vue)
+Orgchart.install(Vue)
+Orguser.install(Vue)
+Admindict.install(Vue)
 Column.install(Vue)
 Content.install(Vue)
 Menu.install(Vue)

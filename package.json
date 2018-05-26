@@ -16,7 +16,6 @@
     "kalix-vue-biz": "^0.0.6",
     "kalix-vue-lib": "^0.1.2",
     "kalix-vue-navigate": "^1.0.7",
-    "kalix-vue-admin": "^0.2.13",
     "vue": "^2.5.16",
     "vue-axios": "^2.1.1",
     "vue-router": "^3.0.1"

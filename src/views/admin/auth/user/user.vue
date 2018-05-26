@@ -1,19 +1,19 @@
 <template lang="pug">
   keep-alive
-    base-table(title='用户列表'
-      v-bind:bizKey="bizKey" v-bind:targetURL="targetURL"
-      v-bind:bizDialog="bizDialog"
-      v-bind:bizSearch="bizSearch" v-bind:btnList="btnList"
-      v-bind:customTableTool="customTableTool" v-bind:isFixedColumn="isFixedColumn"
-      v-bind:buttonPermissionPrefix="buttonPermissionPrefix"
-      v-bind:dictDefine="dictDefine" ref="userTable")
+    kalix-table(title='用户列表'
+    v-bind:bizKey="bizKey" v-bind:targetURL="targetURL"
+    v-bind:bizDialog="bizDialog"
+    v-bind:bizSearch="bizSearch" v-bind:btnList="btnList"
+    v-bind:customTableTool="customTableTool" v-bind:isFixedColumn="isFixedColumn"
+    v-bind:buttonPermissionPrefix="buttonPermissionPrefix"
+    v-bind:dictDefine="dictDefine" ref="userTable")
       template(slot="tableColumnSlot")
-        el-table-column(prop="icon" label="头像" align="center")
-          template(slot-scope="scope")
-            img(v-if="scope.row.icon" v-bind:src="scope.row.icon" width="32" height="32" alt="")
-            img(v-else src="../../../components/header/default_user.png" width="32" height="32" alt="")
-        el-table-column(prop="userTypeName" label="用户类型" align="center" width="100px")
-        el-table-column(prop="code" label="工号/学号/企业组织机构代码" align="center" width="200px")
+        <!--el-table-column(prop="icon" label="头像" align="center")-->
+          <!--template(slot-scope="scope")-->
+            <!--img(v-if="scope.row.icon" v-bind:src="scope.row.icon" width="32" height="32" alt="")-->
+            <!--img(v-else src="/static/images/default_user.png" width="32" height="32" alt="")-->
+        <!--el-table-column(prop="userTypeName" label="用户类型" align="center" width="100px")-->
+        <!--el-table-column(prop="code" label="工号/学号/企业组织机构代码" align="center" width="200px")-->
         el-table-column(prop="loginName" label="登录名" align="center" width="100px")
         el-table-column(prop="name" label="姓名/企业名称" align="center" width="200px")
         el-table-column(prop="sex" label="性别" align="center" width="100px")
@@ -22,18 +22,12 @@
         el-table-column(prop="mobile" label="手机" align="center" width="150px")
 </template>
 <script type="text/ecmascript-6">
-  import BaseTable from '@/components/custom/baseTable'
-  import {usersURL, userBtnPermissionPrefix, UserComponent} from '../config.toml'
-  import {userBtnList} from './index'
-  import {registerComponent} from '@/api/register'
-  import Message from 'common/message'
-  import {ON_REFRESH_DATA} from '@/components/custom/event.toml'
-  import EventBus from 'common/eventbus'
-
-  // 注册全局组件
-  registerComponent(UserComponent)
+  import {usersURL, userBtnPermissionPrefix} from '../../config.toml'
+  import {userBtnList} from './config.js'
+  import {ON_REFRESH_DATA} from 'kalix-vue-lib/src/components/common/event.toml'
 
   export default {
+    name: 'kalix-admin-user',
     props: {
       bizKey: {
         type: String,
@@ -87,9 +81,6 @@
         ]
       }
     },
-    components: {
-      BaseTable
-    },
     created() {
     },
     methods: {
@@ -102,7 +93,7 @@
               cancelButtonText: '取消',
               type: 'warning'
             }).then(() => {
-              return this.axios.request({
+              return this.$http.request({
                 method: 'PUT',
                 url: this.targetURL + '/' + row.id,
                 params: {},
@@ -113,8 +104,8 @@
               })
             }).then((res) => {
               console.log(res)
-              Message.processResult(res)
-              EventBus.$emit(ON_REFRESH_DATA)
+              this.$KalixMessage.processResult(res)
+              this.$KalixEventBus.$emit(ON_REFRESH_DATA)
             })
             break
           }
