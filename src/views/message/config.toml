@@ -1,0 +1,6 @@
+# QIAO項目配置文件
+
+# 留言管理
+QiaoForumURL = "/camel/rest/forums"
+# 回复管理
+QiaoReplyURL = "/camel/rest/replys"

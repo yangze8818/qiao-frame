@@ -1,0 +1,10 @@
+# QIAO項目配置文件
+# 家谱管理
+QiaoGenealogyURL = "/camel/rest/genealogys"
+# 家谱查询
+QiaoSearchURL = "/camel/rest/searchs"
+# 家谱导出
+QiaoExportURL = "/camel/rest/exports"
+# 地图
+QiaoMapURL = "/camel/rest/maps"
+

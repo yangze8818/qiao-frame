@@ -1,0 +1,3 @@
+# 提示信息配置文件
+LoadingTimeOut = "请求超时"
+LoadingFailure = "请求失败"

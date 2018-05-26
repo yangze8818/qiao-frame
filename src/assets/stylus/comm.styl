@@ -1,0 +1,231 @@
+@import "./kalix-color.styl"
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+  margin 0
+  padding 0
+  border 0
+  font-size 100%
+  font inherit
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+  display block
+
+body
+  line-height 1
+
+ol, ul
+  list-style none
+
+blockquote, q
+  quotes none
+
+blockquotebefore, blockquoteafter,
+qbefore, qafter
+  content ''
+
+table
+  border-collapse collaps
+  border-spacing 0
+
+html, body
+  height 100%
+
+body
+  margin 0
+  padding 0
+  position relative
+
+input:-webkit-autofill
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+
+.s-flex
+  display flex
+  .s-flex_item
+    flex 1
+    .label-center
+      label
+        width 100%
+        text-align center
+        padding 0
+
+.s-check__label
+  position relative
+
+.s-check
+  position absolute
+  left -9999em
+
+.text-no-wrap
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+#kalixApp
+  .kalix-base-tool-bar
+    padding 8px 12px
+    .el-button
+      .iconfont
+        font-size 14px
+
+  th
+    font-weight bold
+
+  /*
+  表单表格样式
+  */
+  borderStyle = 1px solid #000000
+  .kalix-form-table
+    border 1px solid #000000
+    & > div
+      border-bottom borderStyle
+      &:last-child
+        border-bottom 0
+    .table-title
+      text-align center
+      font-size 18px
+      font-weight bold
+      padding 10px 0px
+    .el-form-item
+      margin-bottom 0
+      .el-form-item__label
+        font-weight bold
+      .el-input__inner,
+      .el-textarea__inner
+        border 0
+        border-radius 0
+    .kalix-form-table-td
+      position relative
+      border-right borderStyle
+      &:last-child
+        border-right none
+    .el-form-item__label
+      position relative
+      height 100%
+    .el-form-item__content
+      border-left 1px solid #000
+      box-sizing border-box
+    .el-form-item__error
+      padding 3px 6px
+      top 30px
+      border-radius 3px
+      margin-left 10px
+      z-index 9
+      background-color #fff
+      border 1px solid #FFCC66
+      color #FF0033
+      box-shadow 1px 1px 1px rgba(0, 0, 0, 0.26)
+      &:before
+        content ''
+        width 6px
+        height 6px
+        position absolute
+        background-color #ffffff
+        border-top 1px solid #FFCC66
+        border-left 1px solid #FFCC66
+        transform rotate(45deg)
+        top -5px
+    .el-input-group__append
+      background-color transparent
+      border none
+      button
+        &.el-button
+          padding 8px 11px
+          color #ffffff
+          background-color #5fa2dd
+          border-color #5fa2dd
+
+  .kalix-form-table-view
+    .kalix-form-table-td
+      border-right borderStyle
+      &:last-child
+        border-right none
+
+  .base-table-th
+    color $table-th-color
+    background-color $background-color-2
+    border none !important
+    font-size 14px
+    font-weight normal
+
+  .base-table-cell
+    color $table-text-color
+    border-bottom-color #fdf4e8 !important
+
+  .base-teble-operation
+    .operation-btn
+      font-size 13px
+      cursor pointer
+      color $table-operation-color !important
+      & + .operation-btn
+        margin-left 8px
+
+  .base-table-pager
+    .el-pager
+      font-weight normal
+    .el-pagination
+      padding 2px 0
+      .el-select
+        .el-input
+          margin 0
+          .el-input__inner
+            color #a67737
+            border-radius 0
+            border-color #c1b9af
+      .el-pagination__sizes
+        margin-right 0
+      .el-pagination__total
+        color #a67737
+      .el-pagination__jump
+        margin-left 20px
+        color #a67737
+        .el-input
+          width 25px
+          .el-input__inner
+            height 21px
+            border-radius 0
+            border-color #c1b9af
+            background-color #fff6e8
+            color #a67737
+      .btn-prev,
+      .btn-next
+        padding 0
+        margin-left 20px
+        color #a67737
+    .pager-slot
+      font-weight normal
+      text-align center
+      color #a67737
+      .pager-count,
+      .pager-current
+        margin-left 20px
+
+  .el-select-dropdown
+    border-radius 0
+    .el-select-dropdown__item
+      &.selected
+        color #a67737
+
+  .el-button--primary
+    background-color #f3f3f3
+    border-color #dfdfdf
+    color #707070
+    &:focus,
+    &:hover
+      background-color #f9f9f9
+      border-color #e8e8e8
+      color #707070
+
+  .kalix-article
+    padding 10px
+
+  .el-input.is-active .el-input__inner,
+  .el-input__inner:focus,
+  .el-select .el-input__inner:focus
+    border-color #bda879
+
+  .el-switch.is-checked .el-switch__core
+    border-color: #bda879;
+    background-color: #bda879;
+
+  .home
+    .container
+      .article
+        overflow hidden

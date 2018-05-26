@@ -1,0 +1,10 @@
+# 事件常量定义
+
+ON_ADD_BUTTON_CLICK = "onAddBtnClick"
+ON_REFRESH_BUTTON_CLICK = "onRefreshBtnClick"
+ON_SEARCH_BUTTON_CLICK = "onSearchBtnClick"
+ON_TABLE_TOOLBAR_CLICK = "onTableToolBarClick"
+ON_TOOLBAR_CLICK = "onToolBarClick"
+ON_REFRESH_DATA = "refreshData"
+ON_INIT_DIALOG_DATA = "onInitDialogData" # 初始化dialog时的触发事件
+ON_POPOVER_CLICK = "onPopoverClick" # popover 窗口点击事件

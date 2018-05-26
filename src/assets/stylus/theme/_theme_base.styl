@@ -1,0 +1,85 @@
+@import "./../kalix-color.styl"
+@import "./../kalix-font-size.styl"
+
+homeTheme_bak(table_bg_color = #ffffff, table_hd_text_color = #ffffff)
+  .kalix-search
+    .kalix-search-hd
+      background-color table_bg_color
+      color table_hd_text_color
+  .kalix-wrapper
+    .kalix-wrapper-hd
+      background-color table_bg_color
+      color table_hd_text_color
+  .treeList,
+  .kalix-navigate
+    ul
+      &.bg
+        li
+          .mn
+            .tit
+              &:before
+                background-color table_bg_color
+  .el-button--primary
+    background-color table_bg_color
+    border-color table_bg_color
+    color table_hd_text_color
+  .el-switch
+    &.is-checked
+      .el-switch__core
+        border-color table_bg_color
+        background-color table_bg_color
+  .el-pager
+    li
+      &.active
+        border-color table_bg_color
+        background-color table_bg_color
+        color #ffffff
+        border-radius 3px
+
+homeTheme(table_bg_color = #ffffff, table_hd_text_color = #ffffff)
+  .treeList,
+  .kalix-navigate
+    background-color #f6f9fa
+    ul
+      &.bg
+        li
+          color $navigate-text-color
+          .tit-txt
+            border-bottom 1px solid #5b4945
+          .txt
+            font-size 12px
+          &.active
+            .tit-txt
+              color $navigate-title-select-color
+          .mn
+            li
+              border-bottom 1px solid #5b4945
+            .tit
+              font-size $navigate-text-size
+              &:before
+                background-color $navigate-text-color
+              &.active
+                background-color $background-color-5
+                font-size $navigate-text-select-size
+
+    &.small
+      li
+        color #a8967d
+        .tit
+          &:before
+            background-color $navigate-text-color
+          &.active
+            background-color $background-color-5
+          .mn
+            background-color #ffffff
+            ul
+              li.tit
+                &:hover
+                  background-color rgba(255, 255, 255, .1)
+                &.router-link-exact-active
+                  background-color rgba(255, 255, 255, .2)
+          &:hover
+            background-color #635754
+            color #ffffff
+            .mn
+              background-color #635754

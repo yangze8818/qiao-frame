@@ -1,0 +1,142 @@
+<!-- eslint-disable -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="UTF-8">
+  <title>Squire</title>
+  <link rel="stylesheet" href="./css/iconfont.css"/>
+  <style type="text/css" media="screen">
+    body {
+      position: relative;
+      margin: 0 auto;
+      padding: 20px 50px;
+      font: 400 16px/1.5 helvetica, arial, sans-serif;
+      text-shadow: 0 1px 0 white;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    #editor {
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      min-height: 200px;
+      background: transparent;
+      color: #2b2b2b;
+      font: 14px '宋体', arial;
+      cursor: text;
+      margin: 0;
+      padding: 0;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+<script type="text/javascript" src="squire-raw.js"></script>
+<div id="editor"></div>
+<script type="text/javascript" charset="utf-8">
+  /* eslint-disable */
+  var div = document.getElementById('editor');
+  var editor = new Squire(div, {
+    blockTag: 'span'
+  });
+  Squire.prototype.makeHeader = function () {
+    return this.modifyBlocks(function (frag) {
+      var output = this._doc.createDocumentFragment();
+      var block = frag;
+      while (block = Squire.getNextBlock(block)) {
+        output.appendChild(
+          this.createElement('h2', [Squire.empty(block)])
+        );
+      }
+      return output;
+    });
+  };
+  this.editor.testPresenceinSelection = (name, action, format, validation) => {
+    let path = this.editor.getPath(),
+      test = (validation.test(path) | this.editor.hasFormat(format));
+    if (name === action && test) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  this.editor.alignRight = () => {
+    this.editor.setTextAlignment('right')
+  }
+  this.editor.alignCenter = () => {
+    this.editor.setTextAlignment('center')
+  }
+  this.editor.alignLeft = () => {
+    this.editor.setTextAlignment('left')
+  }
+
+  /*document.addEventListener('click', function (e) {
+    var id = e.target.id,
+      value;
+    if (id && editor && editor[id]) {
+      if (e.target.className === 'prompt') {
+        value = prompt('Value:');
+      }
+      editor[id](value);
+      console.log('ID:', id)
+      console.log('value:', value)
+    }
+  }, false);*/
+
+  /*$('.item').click(function () {
+    var action = $(this).data('action');
+    test = {
+      value: $(this).data('action'),
+      testBold: editor.testPresenceinSelection('bold', action, 'B', (/>B\b/)),
+      testItalic: editor.testPresenceinSelection('italic', action, 'I', (/>I\b/)),
+      testUnderline: editor.testPresenceinSelection('underline', action, 'U', (/>U\b/)),
+      testOrderedList: editor.testPresenceinSelection('makeOrderedList', action, 'OL', (/>OL\b/)),
+      testLink: editor.testPresenceinSelection('makeLink', action, 'A', (/>A\b/)),
+      testQuote: editor.testPresenceinSelection('increaseQuoteLevel', action, 'blockquote', (/>blockquote\b/)),
+      isNotValue: function (a) {
+        console.log('this:', this)
+        console.log('this.value:', this.value)
+        return (a == action && this.value !== '');
+      }
+    };
+
+
+    editor.alignRight = function () {
+      editor.setTextAlignment('right');
+    };
+    editor.alignCenter = function () {
+      editor.setTextAlignment('center');
+    };
+    editor.alignLeft = function () {
+      editor.setTextAlignment('left');
+    };
+    editor.alignJustify = function () {
+      editor.setTextAlignment('justify');
+    };
+    editor.makeHeading = function () {
+      editor.setFontSize('2em');
+      editor.bold();
+    };
+
+    if (test.testBold | test.testItalic | test.testUnderline | test.testOrderedList | test.testLink | test.testQuote) {
+      if (test.testBold) editor.removeBold();
+      if (test.testItalic) editor.removeItalic();
+      if (test.testUnderline) editor.removeUnderline();
+      if (test.testLink) editor.removeLink();
+      if (test.testOrderedList) editor.removeList();
+      if (test.testQuote) editor.decreaseQuoteLevel();
+    } else if (test.isNotValue('makeLink') | test.isNotValue('insertImage') | test.isNotValue('selectFont')) {
+      // do nothing these are dropdowns.
+    } else {
+      console.log('action:', action)
+      editor[action]();
+      editor.focus();
+    }
+  });*/
+</script>
+</body>
+</html>

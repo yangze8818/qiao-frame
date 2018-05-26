@@ -1,0 +1,9 @@
+# QIAO項目配置文件
+# 栏目管理
+QiaoColumnURL = "/camel/rest/columns"
+# 内容管理
+QiaoContentURL = "/camel/rest/contents"
+# 菜单管理
+QiaoMenuURL = "/camel/rest/menus"
+#栏目菜单级联查询
+QiaoCMURL = "/camel/rest/contents/getColumnAndMenu"

@@ -1,0 +1,76 @@
+# 全局变量配置文件
+
+cacheTime = 7200000 #缓存校验时间
+baseURL = "http://localhost:8181"
+
+systemApplicationsBaseURL = "/camel/rest/system/applications/"
+loginUrl = "/login.jsp"
+logoutUrl = "/logout"
+applicationURL = "/camel/rest/system/applications"
+msgCountURL = "/camel/rest/messages/polling/msgCount"
+msgURL = "/camel/rest/messages/polling/msg"
+
+#按钮 权限认证的地址
+SecurityBtnUrl = "/camel/rest/system/applications/modules/children/buttons/"
+ScheduleDictsURL = "/camel/rest/schedule/dicts"
+ScheduleDictsTypesListURL = "/camel/rest/schedule/dicts/types/list"
+
+# 附件管理请求地址
+AttachmentURL="/camel/rest/attachments"
+# 附件couchdb上传地址
+uploadURL = "/camel/rest/upload"
+# 附件couchdb删除地址
+couchdbDelURL = "/camel/rest/couchdb"
+# 组织机构树请求地址
+orgURL = "/camel/rest/orgs"
+TeachingUnitOrgID = 22601
+userURL = "/camel/rest/users"
+# 吉林动画学院-校领导职务id
+ManagerUserDutyID = 104954
+
+# 全局table分页的配置
+[PageConfig]
+  sizes = [10, 20, 30, 40]
+  limit = 10
+  page = 1
+  start = 0
+
+# table 的默认按钮定义
+[[ToolButtonList]]
+  id = "view"
+  title = "查看"
+  isShow = true    # 是否显示
+  isPermission = true   # 是否进行权限认证
+[[ToolButtonList]]
+  id = "edit"
+  title = "编辑"
+  isShow = true
+  isPermission = true
+[[ToolButtonList]]
+  id = "delete"
+  title = "删除"
+  isShow = true
+  isPermission = true
+
+[[GlobalFilter]]
+  path = "filters/dictFilter.js"
+  name = "getDictName"
+
+# 附件管理
+[[GlobalComponent]]
+  path = "custom/baseAttachmentDialog.vue"
+  name = "AttachmentDialog"
+
+# baseToolBar 的默认按钮定义
+[[GlobalToolBarButtonList]]
+  id = "add"
+  icon = "icon-add"
+  title = "添加"
+  isShow = true
+  isDisable = false
+[[GlobalToolBarButtonList]]
+  id = "deleteChecked"
+  icon = "icon-delete"
+  title = "删除选中"
+  isShow = false
+  isDisable = false

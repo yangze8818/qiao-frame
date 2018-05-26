@@ -1,0 +1,12 @@
+# QIAO項目配置文件
+# 数据字典
+QiaoDictURL = "/camel/rest/qiao/dicts"
+QiaoDictsTypesListURL = "/camel/rest/qiao/dicts/types/list"
+# 地区编码
+QiaoDistrictURL = "/camel/rest/districts"
+# 广告管理
+QiaoAdvertURL = "/camel/rest/adverts"
+# 友情链接
+QiaoBlogrollURL = "/camel/rest/blogrolls"
+# 公司信息
+QiaoSettingURL = "/camel/rest/settings"

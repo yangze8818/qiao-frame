@@ -1,0 +1,298 @@
+# 系统管理項目配置文件
+
+AdminDictURL = "/camel/rest/admin/dicts"
+AdminDictsTypesListURL = "/camel/rest/admin/dicts/types/list"
+
+usersURL = "/camel/rest/users"
+rolesURL = "/camel/rest/roles"
+dutyURL = "/camel/rest/dutys"
+orgURL = "/camel/rest/orgs"
+appsURL = "/camel/rest/system/applications"
+applicationsURL = "/camel/rest/applications/extend/config" #系统应用
+appsStartURL = "/camel/rest/osgi/bundle/start" #系统应用-启动
+appsStopURL = "/camel/rest/osgi/bundle/stop" #系统应用-停止
+workgroupURL = "/camel/rest/workgroups"
+dataauthURL = "/camel/rest/dataauths"
+addusersURL = "/camel/rest//dataauths/[id]/users"
+functionMenuURL = "camel/rest/applications/extend/tree" # 功能管理菜单
+functionItemBaseURL = "/camel/rest/functions/application/" # 功能管理点击菜单节点
+functionURL = "/camel/rest/functions" # 功能管理树表
+templateURL = "/camel/rest/admin/templates" # 模板管理
+templateConfigURL = "/camel/rest/templateconfigs" # 模板配置
+templateContentURL = "/camel/rest/templatecontents" # 模板内容
+auditURL = "/camel/rest/audits" # 审计管理
+auditConfigURL = "/camel/rest/auditconfigs" # 审计配置管理
+userBtnPermissionPrefix = "admin:permissionModule:userMenu:"
+roleBtnPermissionPrefix = "admin:permissionModule:roleMenu:"
+workGroupBtnPermissionPrefix = "admin:permissionModule:workGroupMenu:"
+dataAuthBtnPermissionPrefix = "admin:permissionModule:dataAuthMenu:"
+AdminCacheKey = "ADMIN-DICT-KEY"
+#配置管理
+configAdminURL= "/camel/rest/system/config"
+[[AdminConfiguerComponent]]
+path = "admin/config/configureView"
+name = "AdminConfiguer"
+[[ConfigToolbarList]]
+  id = "editSelf"
+  title = "编辑"
+  isShow = true
+  isPermission = true
+
+[[DutyButtonList]]
+  id = "view"
+  title = "查看"
+  isShow = true    # 是否显示
+  isPermission = true   # 是否进行权限认证
+[[DutyButtonList]]
+  id = "edit"
+  title = "编辑"
+  isShow = true
+  isPermission = true
+[[DutyButtonList]]
+  id = "delete"
+  title = "删除"
+  isShow = true
+  isPermission = true
+[[DutyButtonList]]
+  id = "addUser"
+  title = "添加"
+  toolTipTitle= "添加用户"
+  isShow = true
+  isPermission = true
+
+[[OrgToolbarList]]
+  id = "view"
+  title = "查看"
+  icon = "icon-view"
+  type = "success"
+  isShow = true    # 是否显示
+  isPermission = true   # 是否进行权限认证
+[[OrgToolbarList]]
+  id = "edit"
+  title = "编辑"
+  icon = "icon-edit"
+  type = "info"
+  isShow = true
+  isPermission = true
+[[OrgToolbarList]]
+  id = "delete"
+  title = "删除"
+  icon = "icon-delete"
+  type = "danger"
+  isShow = true
+  isPermission = true
+
+# 数据权限table 的按钮定义
+[[DataAuthToolButtonList]]
+  id = "view"
+  title = "查看"
+  isShow = true    # 是否显示
+  isPermission = true   # 是否进行权限认证
+[[DataAuthToolButtonList]]
+  id = "edit"
+  title = "编辑"
+  isShow = true
+  isPermission = true
+[[DataAuthToolButtonList]]
+  id = "delete"
+  title = "删除"
+  isShow = true
+  isPermission = true
+[[DataAuthToolButtonList]]
+  id = "addUser"
+  title = "用户"
+  toolTipTitle = "添加用户"
+  isShow = true
+  isPermission = true
+
+  # table 的默认按钮定义
+  [[ToolButtonList]]
+    id = "view"
+    title = "查看"
+    isShow = true    # 是否显示
+    isPermission = true   # 是否进行权限认证
+  [[ToolButtonList]]
+    id = "edit"
+    title = "编辑"
+    isShow = true
+    isPermission = true
+  [[ToolButtonList]]
+    id = "delete"
+    title = "删除"
+    isShow = true
+    isPermission = true
+
+[[WorkGroupComponent]]
+ path = "admin/workgroup/workgroupView"
+ name = "AdminWorkGroupView"
+[[WorkGroupComponent]]
+ path = "admin/workgroup/workgroupAdd"
+ name = "AdminWorkGroupAdd"
+[[WorkGroupComponent]]
+ path = "admin/workgroup/workgroupSearch"
+ name = "AdminWorkGroupSearch"
+[[WorkGroupComponent]]
+ path = "admin/workgroup/workgroupAddUser"
+ name = "AdminWorkGroupAddUser"
+[[WorkGroupComponent]]
+ path = "admin/workgroup/workgroupAddRole"
+ name = "AdminWorkGroupAddRole"
+
+[[UserComponent]]
+ path = "admin/user/userView"
+ name = "AdminUserView"
+[[UserComponent]]
+ path = "admin/user/userAdd"
+ name = "AdminUserAdd"
+[[UserComponent]]
+ path = "admin/user/userSearch"
+ name = "AdminUserSearch"
+[[UserComponent]]
+ path = "admin/user/userEdit"
+ name = "AdminUserEdit"
+[[UserComponent]]
+ path = "admin/user/userResetpwd"
+ name = "AdminUserResetpwd"
+[[UserComponent]]
+ path = "admin/user/userAuthView"
+ name = "AdminUserAuthView"
+
+[[ApplicationComponent]]
+ path = "admin/application/applicationSearch"
+ name = "AdminApplicationSearch"
+[[ApplicationComponent]]
+ path = "admin/application/applicationView"
+ name = "AdminApplicationView"
+
+[[DataAuthComponent]]
+ path = "admin/dataauth/dataauthView"
+ name = "AdminDataAuthView"
+[[DataAuthComponent]]
+ path = "admin/dataauth/dataauthAdd"
+ name = "AdminDataAuthAdd"
+[[DataAuthComponent]]
+ path = "admin/dataauth/dataauthSearch"
+ name = "AdminDataAuthSearch"
+[[DataAuthComponent]]
+ path = "admin/dataauth/dataauthAddUser"
+ name = "AdminDataAuthAddUser"
+
+ [[DutyComponent]]
+  path = "admin/duty/dutyView"
+  name = "AdminDutyView"
+ [[DutyComponent]]
+  path = "admin/duty/dutyAdd"
+  name = "AdminDutyAdd"
+ [[DutyComponent]]
+  path = "admin/duty/dutySearch"
+  name = "AdminDutySearch"
+ [[DutyComponent]]
+  path = "admin/duty/dutyAddUser"
+  name = "AdminDutyAddUser"
+
+ [[OrgComponent]]
+  path = "admin/org/orgAddUser"
+  name = "AdminOrgAddUser"
+ [[OrgComponent]]
+  path = "admin/org/orgEdit"
+  name = "AdminOrgEdit"
+ [[OrgComponent]]
+  path = "admin/org/orgAdd"
+  name = "AdminOrgAdd"
+ [[OrgComponent]]
+  path = "admin/org/orgSearch"
+  name = "AdminOrgSearch"
+
+# 需要自动注册成全局的role组件
+  [[RoleComponent]]
+   path = "admin/role/roleView"
+   name = "AdminRoleView"
+  [[RoleComponent]]
+   path = "admin/role/roleAdd"
+   name = "AdminRoleAdd"
+  [[RoleComponent]]
+   path = "admin/role/roleSearch"
+   name = "AdminRoleSearch"
+  [[RoleComponent]]
+   path = "admin/role/roleAdd"
+   name = "AdminRoleEdit"
+  [[RoleComponent]]
+   path = "admin/role/roleAddUser"
+   name = "AdminRoleAddUser"
+   [[RoleComponent]]
+   path = "admin/role/roleAuth"
+   name = "AdminRoleAuth"
+
+
+  [[DataAuthComponent]]
+   path = "admin/dataauth/dataauthView"
+   name = "AdminDataAuthView"
+  [[DataAuthComponent]]
+   path = "admin/dataauth/dataauthAdd"
+   name = "AdminDataAuthAdd"
+  [[DataAuthComponent]]
+   path = "admin/dataauth/dataauthSearch"
+   name = "AdminDataAuthSearch"
+  [[DataAuthComponent]]
+   path = "admin/dataauth/dataauthAddUser"
+   name = "AdminDataAuthAddUser"
+[[FunctionComponent]]
+ path = "admin/function/functionAdd"
+ name = "AdminFunctionAdd"
+[[FunctionComponent]]
+ path = "admin/function/functionEdit"
+ name = "AdminFunctionEdit"
+[[TemplateComponent]]
+ path = "admin/template/templateSearch"
+ name = "AdminTemplateSearch"
+[[TemplateComponent]]
+ path = "admin/template/templateAdd"
+ name = "AdminTemplateAdd"
+[[TemplateComponent]]
+ path = "admin/template/templateView"
+ name = "AdminTemplateView"
+[[TemplateComponent]]
+ path = "admin/template/templateEdit"
+ name = "AdminTemplateEdit"
+[[TemplateComponent]]
+ path = "admin/template/templatePreview"
+ name = "AdminTemplatePreview"
+[[TemplateComponent]]
+ path = "admin/template/templateConfigAdd"
+ name = "AdminTemplateConfigAdd"
+[[TemplateComponent]]
+ path = "admin/template/templateConfigView"
+ name = "AdminTemplateConfigView"
+[[TemplateComponent]]
+ path = "admin/template/templateConfigEdit"
+ name = "AdminTemplateConfigEdit"
+[[TemplateComponent]]
+ path = "admin/template/templateContentAdd"
+ name = "AdminTemplateContentAdd"
+[[TemplateComponent]]
+ path = "admin/template/templateContentEdit"
+ name = "AdminTemplateContentEdit"
+[[TemplateComponent]]
+ path = "admin/template/templateContentView"
+ name = "AdminTemplateContentView"
+[[TemplateEditComponent]]
+ path = "admin/template/templatePopTable"
+ name = "AdminTemplatePopTable"
+[[AuditComponent]]
+ path = "admin/audit/auditView"
+ name = "AdminAuditView"
+[[AuditComponent]]
+ path = "admin/audit/auditSearch"
+ name = "AdminAuditSearch"
+[[AuditConfigComponent]]
+ path = "admin/auditconfig/auditconfigSearch"
+ name = "AdminAuditConfigSearch"
+[[AuditConfigComponent]]
+ path = "admin/auditconfig/auditconfigAdd"
+ name = "AdminAuditConfigAdd"
+[[AuditConfigComponent]]
+ path = "admin/auditconfig/auditconfigEdit"
+ name = "AdminAuditConfigEdit"
+[[AuditConfigComponent]]
+ path = "admin/auditconfig/auditconfigView"
+ name = "AdminAuditConfigView"
